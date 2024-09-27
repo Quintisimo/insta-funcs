@@ -1,6 +1,11 @@
 import reactRefresh from "@vitejs/plugin-react";
 import tsPaths from "vite-tsconfig-paths";
 import { createApp, RouterSchemaInput } from "vinxi";
+import { createFuncsFolder } from "./utils/funcs";
+import { installAllDeps } from "./utils/deps";
+
+createFuncsFolder();
+installAllDeps();
 
 export const serverRouter = {
   name: "server",

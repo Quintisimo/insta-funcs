@@ -1,9 +1,7 @@
 import { eventHandler, getRequestURL, readBody } from "vinxi/http";
 
 import { serverRouter } from "../app.config";
-import { createFuncsFolder, getFunc } from "../utils/funcs";
-
-createFuncsFolder();
+import { getFunc } from "../utils/funcs";
 
 export default eventHandler(async (event) => {
   console.log(event.method);
