@@ -1,7 +1,6 @@
-import { eventHandler, toWebRequest } from "vinxi/http";
+import { eventHandler } from "vinxi/http";
 
-export default eventHandler((event) => {
-  console.log(toWebRequest(event));
+export default eventHandler(() => {
   return new Response(
     `
     <!DOCTYPE html>
@@ -24,6 +23,6 @@ export default eventHandler((event) => {
       headers: {
         "Content-Type": "text/html",
       },
-    }
+    },
   );
 });

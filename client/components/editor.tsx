@@ -4,6 +4,7 @@ import ts from "typescript";
 import { useAtom, useSetAtom } from "jotai";
 
 import { codeAtom, errorsAtom } from "../store";
+import { getHandlerArgsTypeStr } from "../../utils/code";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
@@ -11,6 +12,7 @@ export default function Editor() {
 
   return (
     <div className="h-[600px] w-[90%] m-10 border-2">
+      <input type="hidden" name="code" value={code} />
       <MonacoEditor
         options={{
           minimap: {
@@ -26,7 +28,16 @@ export default function Editor() {
         defaultPath="index.ts"
         path="index.ts"
         onMount={(editor, monaco) => {
-          const tsDefault = monaco?.languages.typescript.typescriptDefaults;
+          const tsDefault = monaco?.languages.typescript.javascriptDefaults;
+
+          const content = getHandlerArgsTypeStr();
+          const name = "ts:filename/argType.d.ts";
+          tsDefault.addExtraLib(content, name);
+          monaco.editor.createModel(
+            content,
+            "typescript",
+            monaco.Uri.parse(name),
+          );
 
           tsDefault.setCompilerOptions({
             esModuleInterop: true,
@@ -44,7 +55,6 @@ export default function Editor() {
           });
 
           editor.onDidChangeModelContent(() => ata(editor.getValue()));
-          // ata(editor.getValue());
         }}
       />
     </div>
