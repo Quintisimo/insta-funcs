@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import FuncForm from "./routes/func-form";
 
 import "./main.css";
+import { addFunc } from "../server/add-func";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     element: <FuncForm />,
     action: async ({ request }) => {
       const formData = await request.formData();
-      console.log(Object.fromEntries(formData));
+      const code = formData.get("code").toString();
+      addFunc(code);
       return null;
     },
   },

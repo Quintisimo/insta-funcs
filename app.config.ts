@@ -1,20 +1,9 @@
 import reactRefresh from "@vitejs/plugin-react";
 import tsPaths from "vite-tsconfig-paths";
-import { createApp, RouterSchemaInput } from "vinxi";
-import { createFuncsFolder } from "./utils/funcs";
-import { installAllDeps } from "./utils/deps";
+import { serverFunctions } from "@vinxi/server-functions/plugin";
+import { createApp } from "vinxi";
 
-createFuncsFolder();
-installAllDeps();
-
-export const serverRouter = {
-  name: "server",
-  type: "http",
-  handler: "./server/index.ts",
-  target: "server",
-  base: "/api",
-  plugins: () => [tsPaths()],
-} satisfies RouterSchemaInput;
+export const serverBase = "/rest";
 
 export default createApp({
   routers: [
@@ -28,8 +17,17 @@ export default createApp({
       type: "spa",
       handler: "./client/index.ts",
       target: "browser",
-      plugins: () => [tsPaths(), reactRefresh()],
+      plugins: () => [tsPaths(), reactRefresh(), serverFunctions.client()],
     },
-    serverRouter,
+    {
+      name: "rest",
+      type: "http",
+      handler: "./rest/index.ts",
+      target: "server",
+      base: serverBase,
+    },
+    serverFunctions.router({
+      plugins: () => [tsPaths()],
+    }),
   ],
 });

@@ -2,25 +2,20 @@ import path from "node:path";
 import fs from "node:fs";
 import { tsImport } from "tsx/esm/api";
 import { FOLDER_PATH } from "./constants";
-import { HandlerArgs } from "../utils/funcArgTypes";
+import { ImportHandler } from "./types";
+import { HTTPMethod } from "vinxi/http";
 
-export function createFuncsFolder() {
-  if (fs.existsSync(FOLDER_PATH)) return;
-  fs.mkdirSync(FOLDER_PATH);
-}
+export async function getFunc(route: string, method: HTTPMethod) {
+  const filePath = getFuncFilePath(route, method);
+  if (!fs.existsSync(filePath)) return;
 
-type ImportHandler = {
-  handler(args: HandlerArgs): Promise<Record<string, unknown>>;
-};
-
-export async function getFunc(route: string) {
-  const filePath = path.join(FOLDER_PATH, `${route}.ts`);
-  if (!fs.existsSync(filePath)) {
-    throw new Error("Function does not exist");
-  }
   const { handler } = (await tsImport(
     filePath,
     import.meta.url,
   )) as ImportHandler;
   return handler;
+}
+
+export function getFuncFilePath(route: string, method: HTTPMethod) {
+  return path.join(FOLDER_PATH, `${route}.${method.toLowerCase()}.ts`);
 }

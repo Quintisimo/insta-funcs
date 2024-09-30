@@ -11,7 +11,7 @@ export default function Editor() {
   const setErrors = useSetAtom(errorsAtom);
 
   return (
-    <div className="h-[600px] w-[90%] m-10 border-2">
+    <div className="h-[600px] w-full my-4 border-2">
       <input type="hidden" name="code" value={code} />
       <MonacoEditor
         options={{
@@ -22,7 +22,12 @@ export default function Editor() {
         onChange={(value) => setCode(value)}
         value={code}
         onValidate={(markers) => {
-          setErrors(markers.map((marker) => marker.message));
+          setErrors(
+            markers
+              // Only include error, exclude warnings:https://microsoft.github.io/monaco-editor/docs.html#enums/MarkerSeverity.html
+              .filter((marker) => marker.severity === 8)
+              .map((marker) => marker.message),
+          );
         }}
         language="typescript"
         defaultPath="index.ts"
