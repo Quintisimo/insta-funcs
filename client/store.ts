@@ -1,8 +1,8 @@
 import { atom } from "jotai";
 import { getPackages } from "../utils/code";
-import { getHandlerArgsTypeStr } from "../utils/code";
+import { handlerArgsStr } from "../utils/types";
 
-const type = getHandlerArgsTypeStr();
+const type = handlerArgsStr;
 const typeName = type.match(/type (.*) =/)[1];
 
 const initialCode = `export function handler(args: ${typeName}) {

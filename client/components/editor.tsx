@@ -4,7 +4,7 @@ import ts from "typescript";
 import { useAtom, useSetAtom } from "jotai";
 
 import { codeAtom, errorsAtom } from "../store";
-import { getHandlerArgsTypeStr } from "../../utils/code";
+import { handlerArgsStr } from "../../utils/types";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
@@ -30,7 +30,7 @@ export default function Editor() {
         onMount={(editor, monaco) => {
           const tsDefault = monaco?.languages.typescript.javascriptDefaults;
 
-          const content = getHandlerArgsTypeStr();
+          const content = handlerArgsStr;
           const name = "ts:filename/argType.d.ts";
           tsDefault.addExtraLib(content, name);
           monaco.editor.createModel(
