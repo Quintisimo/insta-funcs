@@ -52,8 +52,8 @@ importers:
         version: 0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0)
     devDependencies:
       '@eslint/js':
-        specifier: 9.9.0
-        version: 9.9.0
+        specifier: 9.11.1
+        version: 9.11.1
       '@types/react':
         specifier: 18.3.10
         version: 18.3.10
@@ -645,10 +645,6 @@ packages:
 
   '@eslint/js@9.11.1':
     resolution: {integrity: sha512-/qu+TWz8WwPWc7/HcIJKi+c+MOm46GdVaSlTTQcaqaL53+GsoA6MxWp5PtTx48qbSP7ylM1Kn7nhvkugfJvRSA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.9.0':
-    resolution: {integrity: sha512-hhetes6ZHP3BlXLxmd8K2SNgkhNSi+UcecbnwWKwpP7kyi/uC75DJ1lOOBO3xrC4jyojtGE3YxKZPHfk4yrgug==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.4':
@@ -3467,8 +3463,6 @@ snapshots:
       - supports-color
 
   '@eslint/js@9.11.1': {}
-
-  '@eslint/js@9.9.0': {}
 
   '@eslint/object-schema@2.1.4': {}
 
