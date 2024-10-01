@@ -1,30 +1,41 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import FuncForm from "./routes/func-form";
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+
+import Home from "./routes/home/component";
+import { getAllFuncs } from "./routes/home/loader";
+
+import FuncForm from "./routes/func-form/component";
+import { getFunc, newFunc } from "./routes/func-form/loader";
+import { createFunc, updateFunc } from "./routes/func-form/action";
 
 import "./main.css";
-import { addFunc } from "../server/add-func";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Home</h1>,
+    loader: getAllFuncs,
+    element: <Home />,
   },
   {
     path: "/new",
+    loader: newFunc,
     element: <FuncForm />,
-    action: async ({ request }) => {
-      const formData = await request.formData();
-      const code = formData.get("code").toString();
-      addFunc(code);
-      return null;
-    },
+    action: createFunc,
+  },
+  {
+    path: "/:id",
+    loader: getFunc,
+    element: <FuncForm />,
+    action: updateFunc,
   },
 ]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FluentProvider theme={webLightTheme}>
+      <RouterProvider router={router} />
+    </FluentProvider>
   </StrictMode>,
 );

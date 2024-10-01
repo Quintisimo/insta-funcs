@@ -1,33 +1,66 @@
 import { useAtom } from "jotai";
-import { HttpMethods, httpMethods, methodAtom, nameAtom } from "../store";
+import {
+  Dropdown,
+  Option,
+  Input,
+  useId,
+  Label,
+  Tooltip,
+} from "@fluentui/react-components";
+import { httpMethods, methodAtom, nameAtom } from "../store";
 
-function FuncProps() {
+function InputWrapper({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-col gap-1">{children}</div>;
+}
+
+export default function FuncProps() {
   const [name, setName] = useAtom(nameAtom);
   const [method, setMethod] = useAtom(methodAtom);
 
+  const inputId = useId("input");
+  const dropdownId = useId("dropdown");
+
   return (
     <div className="flex w-full justify-between">
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={(evt) => setName(evt.target.value)}
-        className="border-2"
-      />
+      <InputWrapper>
+        <Label htmlFor={inputId} required>
+          Name
+        </Label>
+        <Tooltip content="Should be lowercase" relationship="label">
+          <Input
+            id={inputId}
+            required
+            name="name"
+            defaultValue={name}
+            onChange={(evt, data) => {
+              if (/^[a-z]+$/.test(data.value)) {
+                setName(data.value);
+                return;
+              }
+              setName("");
+            }}
+          />
+        </Tooltip>
+      </InputWrapper>
 
-      <select
-        name="method"
-        value={method}
-        onChange={(evt) => setMethod(evt.target.value as HttpMethods)}
-      >
-        {httpMethods.map((method) => (
-          <option key={method} value={method}>
-            {method.toUpperCase()}
-          </option>
-        ))}
-      </select>
+      <InputWrapper>
+        <Label htmlFor={dropdownId} required>
+          Method
+        </Label>
+        <Dropdown
+          id={dropdownId}
+          name="method"
+          aria-required
+          defaultValue={method}
+          onOptionSelect={(evt, data) => setMethod(data.optionValue)}
+        >
+          {httpMethods.map((method) => (
+            <Option key={method} value={method}>
+              {method}
+            </Option>
+          ))}
+        </Dropdown>
+      </InputWrapper>
     </div>
   );
 }
-
-export default FuncProps;

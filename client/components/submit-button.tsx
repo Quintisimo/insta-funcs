@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
+import { Button } from "@fluentui/react-components";
 import { useAtomValue } from "jotai";
 import { codeAtom, errorsAtom, methodAtom, nameAtom } from "../store";
 import { useMemo } from "react";
 
-export default function Button() {
+export default function SubmitButton() {
   const location = useLocation();
   const code = useAtomValue(codeAtom);
   const errors = useAtomValue(errorsAtom);
@@ -20,14 +21,13 @@ export default function Button() {
   }, [location]);
 
   return (
-    <button
+    <Button
       type="submit"
-      className="bg-teal-200 p-2 rounded-md disabled:bg-gray-100"
       disabled={
         !code.length || !!errors.length || !name.length || !method.length
       }
     >
       {text}
-    </button>
+    </Button>
   );
 }

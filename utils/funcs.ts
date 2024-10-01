@@ -16,6 +16,6 @@ export async function getFunc(route: string, method: HTTPMethod) {
   return handler;
 }
 
-export function getFuncFilePath(route: string, method: HTTPMethod) {
+export function getFuncFilePath(route: string, method: string) {
   return path.join(FOLDER_PATH, `${route}.${method.toLowerCase()}.ts`);
 }

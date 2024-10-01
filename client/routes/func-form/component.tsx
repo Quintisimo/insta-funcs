@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom";
-import Button from "../components/button";
-import Editor from "../components/editor";
-import FuncProps from "../components/func-props";
+import SubmitButton from "../../components/submit-button";
+import Editor from "../../components/editor";
+import FuncProps from "../../components/func-props";
 
 function FuncForm() {
   return (
@@ -11,7 +11,7 @@ function FuncForm() {
     >
       <FuncProps />
       <Editor />
-      <Button />
+      <SubmitButton />
     </Form>
   );
 }

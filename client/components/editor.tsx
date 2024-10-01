@@ -12,7 +12,6 @@ export default function Editor() {
 
   return (
     <div className="h-[600px] w-full my-4 border-2">
-      <input type="hidden" name="code" value={code} />
       <MonacoEditor
         options={{
           minimap: {
@@ -34,15 +33,15 @@ export default function Editor() {
         path="index.ts"
         onMount={(editor, monaco) => {
           const tsDefault = monaco?.languages.typescript.javascriptDefaults;
-
-          const content = handlerArgsStr;
           const name = "ts:filename/argType.d.ts";
-          tsDefault.addExtraLib(content, name);
-          monaco.editor.createModel(
-            content,
-            "typescript",
-            monaco.Uri.parse(name),
-          );
+          const uri = monaco.Uri.parse(name);
+          const model = monaco.editor.getModel(uri);
+
+          if (!model) {
+            const content = handlerArgsStr;
+            tsDefault.addExtraLib(content, name);
+            monaco.editor.createModel(content, "typescript", uri);
+          }
 
           tsDefault.setCompilerOptions({
             esModuleInterop: true,
