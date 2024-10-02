@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom";
-import SubmitButton from "../../components/submit-button";
-import Editor from "../../components/editor";
-import FuncProps from "../../components/func-props";
+import Editor from "~/components/editor";
+import FuncProps from "~/components/func-props";
+import SubmitButton from "~/components/submit-button";
 
 function FuncForm() {
   return (

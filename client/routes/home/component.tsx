@@ -1,4 +1,3 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
 import {
   Button,
   Table,
@@ -8,7 +7,8 @@ import {
   TableHeaderCell,
   TableRow,
 } from "@fluentui/react-components";
-import { getAllFuncs } from "./loader";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import type { getAllFuncs } from "./loader";
 
 function Home() {
   const { headers, rows } = useLoaderData() as Awaited<

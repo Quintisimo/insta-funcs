@@ -1,8 +1,8 @@
-import { ActionFunctionArgs, redirect } from "react-router-dom";
-import { addFunc, removeOldFunc } from "../../../server/funcs";
-import { getFuncNameandMethod } from "../../../utils/code";
 import { getDefaultStore } from "jotai";
-import { codeAtom, methodAtom, nameAtom } from "../../store";
+import { type ActionFunctionArgs, redirect } from "react-router-dom";
+import { addFunc, removeOldFunc } from "~/server/funcs";
+import { codeAtom, methodAtom, nameAtom } from "~/store";
+import { getFuncNameandMethod } from "~/utils/code";
 
 export async function createFunc() {
   const store = getDefaultStore();

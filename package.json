@@ -8,7 +8,8 @@
     "build": "vinxi build",
     "prestart": "tsx setup.ts",
     "start": "vinxi start",
-    "lint": "eslint ."
+    "lint": "biome check .",
+    "lint:fix": "biome check --write --unsafe ."
   },
   "dependencies": {
     "@fluentui/react-components": "9.54.17",
@@ -17,7 +18,6 @@
     "@vinxi/react": "0.2.5",
     "@vinxi/server-functions": "0.4.3",
     "autoprefixer": "10.4.20",
-    "is-odd": "3.0.1",
     "jotai": "2.10.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -28,15 +28,10 @@
     "vinxi": "0.4.3"
   },
   "devDependencies": {
-    "@eslint/js": "9.11.1",
+    "@biomejs/biome": "1.9.3",
     "@types/react": "18.3.10",
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.2",
-    "eslint": "9.11.1",
-    "eslint-plugin-react-hooks": "5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "0.4.9",
-    "globals": "15.9.0",
-    "typescript-eslint": "8.8.0",
     "vite-tsconfig-paths": "5.0.1"
   }
 }

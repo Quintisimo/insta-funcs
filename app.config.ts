@@ -1,7 +1,7 @@
-import reactRefresh from "@vitejs/plugin-react";
-import tsPaths from "vite-tsconfig-paths";
 import { serverFunctions } from "@vinxi/server-functions/plugin";
+import reactRefresh from "@vitejs/plugin-react";
 import { createApp } from "vinxi";
+import tsPaths from "vite-tsconfig-paths";
 
 export const serverBase = "/rest";
 

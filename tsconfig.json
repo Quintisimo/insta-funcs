@@ -9,6 +9,13 @@
     "noEmit": true,
     "types": ["vinxi/client"],
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "~/components/*": ["./client/components/*"],
+      "~/routes/*": ["./client/routes/*"],
+      "~/store": ["./client/store"],
+      "~/utils/*": ["./utils/*"],
+      "~/server/*": ["./server/*"]
+    }
   }
 }

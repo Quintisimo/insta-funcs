@@ -1,9 +1,9 @@
-import path from "node:path";
 import fs from "node:fs";
+import path from "node:path";
 import { tsImport } from "tsx/esm/api";
+import type { HTTPMethod } from "vinxi/http";
 import { FOLDER_PATH } from "./constants";
-import { ImportHandler } from "./types";
-import { HTTPMethod } from "vinxi/http";
+import type { ImportHandler } from "./types";
 
 export async function getFunc(route: string, method: HTTPMethod) {
   const filePath = getFuncFilePath(route, method);

@@ -1,4 +1,4 @@
-import { Params } from "react-router-dom";
+import type { Params } from "react-router-dom";
 
 export function getPackages(code: string) {
   return code
