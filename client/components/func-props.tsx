@@ -4,16 +4,33 @@ import {
   Label,
   Option,
   Tooltip,
+  tokens,
   useId,
 } from "@fluentui/react-components";
+import { makeStyles } from "@fluentui/react-components";
 import { useAtom } from "jotai";
 import { httpMethods, methodAtom, nameAtom } from "~/store";
 
+const useStyles = makeStyles({
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: " 100%",
+  },
+  inputWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    gap: tokens.spacingVerticalXS,
+  },
+});
+
 function InputWrapper({ children }: { children: React.ReactNode }) {
-  return <div className="flex flex-col gap-1">{children}</div>;
+  const classes = useStyles();
+  return <div className={classes.inputWrapper}>{children}</div>;
 }
 
 export default function FuncProps() {
+  const classes = useStyles();
   const [name, setName] = useAtom(nameAtom);
   const [method, setMethod] = useAtom(methodAtom);
 
@@ -21,7 +38,7 @@ export default function FuncProps() {
   const dropdownId = useId("dropdown");
 
   return (
-    <div className="flex w-full justify-between">
+    <div className={classes.container}>
       <InputWrapper>
         <Label htmlFor={inputId} required>
           Name
