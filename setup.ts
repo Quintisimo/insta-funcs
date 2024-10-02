@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { FOLDER_PATH } from "./utils/constants";
 import { getPackages } from "./utils/code";
+import { FOLDER_PATH } from "./utils/constants";
 import { installDeps } from "./utils/deps";
 
 if (!fs.existsSync(FOLDER_PATH)) {
@@ -15,8 +15,6 @@ const packages = fileNames
     const code = fs.readFileSync(filePath, "utf8");
     return getPackages(code);
   })
-  .filter(function (pkg, index, self) {
-    return self.indexOf(pkg) == index;
-  });
+  .filter((pkg, index, self) => self.indexOf(pkg) === index);
 
 installDeps(packages);

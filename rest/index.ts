@@ -1,7 +1,6 @@
 import { eventHandler, getRequestURL, readBody } from "vinxi/http";
-
+import { getFunc } from "~/utils/funcs";
 import { serverBase } from "../app.config";
-import { getFunc } from "../utils/funcs";
 
 export default eventHandler(async (event) => {
   const url = getRequestURL(event);

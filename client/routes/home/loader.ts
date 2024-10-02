@@ -1,4 +1,4 @@
-import { getFuncs } from "../../../server/funcs";
+import { getFuncs } from "~/server/funcs";
 
 export async function getAllFuncs() {
   return getFuncs();

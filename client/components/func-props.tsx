@@ -1,13 +1,13 @@
-import { useAtom } from "jotai";
 import {
   Dropdown,
-  Option,
   Input,
-  useId,
   Label,
+  Option,
   Tooltip,
+  useId,
 } from "@fluentui/react-components";
-import { httpMethods, methodAtom, nameAtom } from "../store";
+import { useAtom } from "jotai";
+import { httpMethods, methodAtom, nameAtom } from "~/store";
 
 function InputWrapper({ children }: { children: React.ReactNode }) {
   return <div className="flex flex-col gap-1">{children}</div>;

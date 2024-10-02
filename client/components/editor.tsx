@@ -1,10 +1,9 @@
 import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { setupTypeAcquisition } from "@typescript/ata";
-import ts from "typescript";
 import { useAtom, useSetAtom } from "jotai";
-
-import { codeAtom, errorsAtom } from "../store";
-import { handlerArgsStr } from "../../utils/types";
+import ts from "typescript";
+import { codeAtom, errorsAtom } from "~/store";
+import { handlerArgsStr } from "~/utils/types";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
@@ -52,7 +51,7 @@ export default function Editor() {
             typescript: ts,
             delegate: {
               receivedFile: (code, _path) => {
-                const path = "file://" + _path;
+                const path = `file://${_path}`;
                 tsDefault.addExtraLib(code, path);
               },
             },

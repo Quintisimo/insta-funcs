@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { handlerArgsStr } from "../utils/types";
+import { handlerArgsStr } from "~/utils/types";
 
 const type = handlerArgsStr;
 const typeName = type.match(/type (.*) =/)[1];

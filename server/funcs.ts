@@ -1,9 +1,9 @@
 "use server";
 import fs from "node:fs/promises";
-import { FOLDER_PATH } from "../utils/constants";
-import { getFuncFilePath } from "../utils/funcs";
-import { getPackages } from "../utils/code";
-import { installDeps, uninstallDeps } from "../utils/deps";
+import { getPackages } from "~/utils/code";
+import { FOLDER_PATH } from "~/utils/constants";
+import { installDeps, uninstallDeps } from "~/utils/deps";
+import { getFuncFilePath } from "~/utils/funcs";
 
 export async function addFunc(code: string, name: string, method: string) {
   const filePath = getFuncFilePath(name, method);

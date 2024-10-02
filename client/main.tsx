@@ -1,15 +1,12 @@
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FluentProvider, webLightTheme } from "@fluentui/react-components";
-
-import Home from "./routes/home/component";
-import { getAllFuncs } from "./routes/home/loader";
-
-import FuncForm from "./routes/func-form/component";
-import { getFunc, newFunc } from "./routes/func-form/loader";
-import { createFunc, updateFunc } from "./routes/func-form/action";
-
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createFunc, updateFunc } from "~/routes/func-form/action";
+import FuncForm from "~/routes/func-form/component";
+import { getFunc, newFunc } from "~/routes/func-form/loader";
+import Home from "~/routes/home/component";
+import { getAllFuncs } from "~/routes/home/loader";
 import "./main.css";
 
 const router = createBrowserRouter([
@@ -32,10 +29,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <FluentProvider theme={webLightTheme}>
-      <RouterProvider router={router} />
-    </FluentProvider>
-  </StrictMode>,
-);
+const root = document.getElementById("root");
+
+if (root) {
+  createRoot(root).render(
+    <StrictMode>
+      <FluentProvider theme={webLightTheme}>
+        <RouterProvider router={router} />
+      </FluentProvider>
+    </StrictMode>,
+  );
+}

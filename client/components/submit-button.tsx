@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
 import { Button } from "@fluentui/react-components";
 import { useAtomValue } from "jotai";
-import { codeAtom, errorsAtom, methodAtom, nameAtom } from "../store";
 import { useMemo } from "react";
+import { useLocation } from "react-router-dom";
+import { codeAtom, errorsAtom, methodAtom, nameAtom } from "~/store";
 
 export default function SubmitButton() {
   const location = useLocation();
