@@ -1,3 +1,4 @@
+import griffel from "@griffel/vite-plugin";
 import { serverFunctions } from "@vinxi/server-functions/plugin";
 import reactRefresh from "@vitejs/plugin-react";
 import { createApp } from "vinxi";
@@ -17,7 +18,12 @@ export default createApp({
       type: "spa",
       handler: "./client/index.ts",
       target: "browser",
-      plugins: () => [tsPaths(), reactRefresh(), serverFunctions.client()],
+      plugins: () => [
+        tsPaths(),
+        reactRefresh(),
+        serverFunctions.client(),
+        process.env.NODE_ENV === "build" && griffel(),
+      ],
     },
     {
       name: "rest",
