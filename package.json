@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@griffel/tag-processor": "1.0.8",
+    "@griffel/tag-processor": "1.0.9",
     "@griffel/vite-plugin": "0.1.8",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
