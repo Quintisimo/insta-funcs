@@ -52,8 +52,8 @@ importers:
         specifier: 1.0.9
         version: 1.0.9
       '@griffel/vite-plugin':
-        specifier: 0.1.8
-        version: 0.1.8(@griffel/tag-processor@1.0.9)(rollup@4.22.5)(typescript@5.7.2)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
+        specifier: 0.1.9
+        version: 0.1.9(@griffel/tag-processor@1.0.9)(rollup@4.22.5)(typescript@5.7.2)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
@@ -1198,8 +1198,8 @@ packages:
   '@griffel/tag-processor@1.0.9':
     resolution: {integrity: sha512-WNLqhtYYFbrH+1B8YzIiLpZZyoHHq5l4WBCbM/Ul2l3/OXxzCuvHtntnrWmrziVMRVcWN9xf09FQlIoHIsE71Q==}
 
-  '@griffel/vite-plugin@0.1.8':
-    resolution: {integrity: sha512-XXsId6x+dKffFpVrjDPokE8FlWzIaTJzoxwtXQa/Q8+HKlSv18ugQAqGe5KF+RXH2miThr1sOK/BzBpzjNrQ8g==}
+  '@griffel/vite-plugin@0.1.9':
+    resolution: {integrity: sha512-OtH1/HRkxjL6MtG269sQvnkGm7BggDiUZYS2ljs+Ql+iGMVThDACdRCot9G2uSArsHoetLyUheVLPmnKRu3EuA==}
     peerDependencies:
       '@griffel/tag-processor': '*'
       vite: '>=4'
@@ -4919,7 +4919,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@griffel/vite-plugin@0.1.8(@griffel/tag-processor@1.0.9)(rollup@4.22.5)(typescript@5.7.2)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
+  '@griffel/vite-plugin@0.1.9(@griffel/tag-processor@1.0.9)(rollup@4.22.5)(typescript@5.7.2)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
     dependencies:
       '@griffel/tag-processor': 1.0.9
       '@wyw-in-js/vite': 0.2.3(rollup@4.22.5)(typescript@5.7.2)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
