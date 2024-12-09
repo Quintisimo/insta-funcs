@@ -21,8 +21,8 @@ importers:
         specifier: 0.2.5
         version: 0.2.5
       '@vinxi/server-functions':
-        specifier: 0.4.3
-        version: 0.4.3(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))
+        specifier: 1.0.0
+        version: 1.0.0(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))
       jotai:
         specifier: 2.10.3
         version: 2.10.3(@types/react@18.3.12)(react@18.3.1)
@@ -1650,18 +1650,18 @@ packages:
     resolution: {integrity: sha512-WSN1z931BtasZJlgPp704zJFnQFRg7yzSjkm3MzAWQYe4uXFXlFr1hc5Ac2zae5/HDOz5x1/zDM5Cb54vTCnWw==}
     hasBin: true
 
-  '@vinxi/plugin-directives@0.4.3':
-    resolution: {integrity: sha512-Ey+TRIwyk8871PKhQel8NyZ9B6N0Tvhjo1QIttTyrV0d7BfUpri5GyGygmBY7fHClSE/vqaNCCZIKpTL3NJAEg==}
+  '@vinxi/plugin-directives@1.0.0':
+    resolution: {integrity: sha512-uO5M7YHmR1G3KZcXJaGH9gs0zqhtBOhG/yp2YLDBJdXIsn7thD5kSaX6nu6LFiXpLV5o8tI8CSRvfwNYXLCsfw==}
     peerDependencies:
-      vinxi: ^0.4.3
+      vinxi: ^0.4.0
 
   '@vinxi/react@0.2.5':
     resolution: {integrity: sha512-Ubjv/JfYWTxFbuaHxKOeq6hQMuSuIH6eZXRf27wb82YWM82z3VY1nwZzTHgyveHg/EPSOK0p8LUmbw9758xTlw==}
 
-  '@vinxi/server-functions@0.4.3':
-    resolution: {integrity: sha512-kVYrOrCMHwGvHRwpaeW2/PE7URcGtz4Rk/hIHa2xjt5PGopzzB/Y5GC8YgZjtqSRqo0ElAKsEik7UE6CXH3HXA==}
+  '@vinxi/server-functions@1.0.0':
+    resolution: {integrity: sha512-Ckl7pL/yD7BarG4Sj/dq3+dm7RcLYTX7OcwvX51YZ1WJnuuZ9TtKpcWdGM7n7HC10as7INMQ/xHMl6biGhDDSQ==}
     peerDependencies:
-      vinxi: ^0.4.3
+      vinxi: ^0.4.0
 
   '@vitejs/plugin-react@4.3.4':
     resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
@@ -3550,7 +3550,7 @@ snapshots:
   '@babel/helper-module-imports@7.24.7':
     dependencies:
       '@babel/traverse': 7.25.6
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
     transitivePeerDependencies:
       - supports-color
 
@@ -3587,7 +3587,7 @@ snapshots:
   '@babel/helper-simple-access@7.24.7':
     dependencies:
       '@babel/traverse': 7.25.6
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
     transitivePeerDependencies:
       - supports-color
 
@@ -3606,7 +3606,7 @@ snapshots:
   '@babel/helpers@7.25.6':
     dependencies:
       '@babel/template': 7.25.0
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
 
   '@babel/helpers@7.26.0':
     dependencies:
@@ -3622,7 +3622,7 @@ snapshots:
 
   '@babel/parser@7.25.6':
     dependencies:
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
 
   '@babel/parser@7.26.2':
     dependencies:
@@ -3664,8 +3664,8 @@ snapshots:
   '@babel/template@7.25.0':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/parser': 7.25.6
-      '@babel/types': 7.25.6
+      '@babel/parser': 7.26.2
+      '@babel/types': 7.26.0
 
   '@babel/template@7.25.9':
     dependencies:
@@ -3677,9 +3677,9 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/generator': 7.25.6
-      '@babel/parser': 7.25.6
+      '@babel/parser': 7.26.2
       '@babel/template': 7.25.0
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
       debug: 4.3.7
       globals: 11.12.0
     transitivePeerDependencies:
@@ -5386,16 +5386,16 @@ snapshots:
 
   '@types/babel__generator@7.6.8':
     dependencies:
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.25.6
-      '@babel/types': 7.25.6
+      '@babel/parser': 7.26.2
+      '@babel/types': 7.26.0
 
   '@types/babel__traverse@7.20.6':
     dependencies:
-      '@babel/types': 7.25.6
+      '@babel/types': 7.26.0
 
   '@types/braces@3.0.4': {}
 
@@ -5472,9 +5472,9 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.4.3(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))':
+  '@vinxi/plugin-directives@1.0.0(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))':
     dependencies:
-      '@babel/parser': 7.25.6
+      '@babel/parser': 7.26.2
       acorn: 8.12.1
       acorn-jsx: 5.3.2(acorn@8.12.1)
       acorn-loose: 8.4.0
@@ -5487,9 +5487,9 @@ snapshots:
 
   '@vinxi/react@0.2.5': {}
 
-  '@vinxi/server-functions@0.4.3(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))':
+  '@vinxi/server-functions@1.0.0(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))
+      '@vinxi/plugin-directives': 1.0.0(vinxi@0.4.3(@types/node@22.7.3)(ioredis@5.4.1)(terser@5.34.0))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
@@ -6461,8 +6461,8 @@ snapshots:
 
   magicast@0.2.11:
     dependencies:
-      '@babel/parser': 7.25.6
-      '@babel/types': 7.25.6
+      '@babel/parser': 7.26.2
+      '@babel/types': 7.26.0
       recast: 0.23.9
 
   make-dir@3.1.0:
