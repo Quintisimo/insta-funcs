@@ -31,6 +31,7 @@ export default createApp({
       handler: "./rest/index.ts",
       target: "server",
       base: serverBase,
+      plugins: () => [tsPaths()],
     },
     serverFunctions.router({
       plugins: () => [tsPaths()],
