@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fluentui/react-components": "9.58.3",
-    "@monaco-editor/react": "4.6.0",
+    "@monaco-editor/react": "4.7.0",
     "@typescript/ata": "0.9.7",
     "@vinxi/react": "0.2.5",
     "@vinxi/server-functions": "1.0.0",
