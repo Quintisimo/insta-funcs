@@ -4,6 +4,7 @@ import { getPackages } from "~/utils/code";
 import { FOLDER_PATH } from "~/utils/constants";
 import { installDeps, uninstallDeps } from "~/utils/deps";
 import { getFuncFilePath } from "~/utils/funcs";
+import { serverBase } from "../app.config";
 
 export async function addFunc(code: string, name: string, method: string) {
   const filePath = getFuncFilePath(name, method);
@@ -18,7 +19,7 @@ export async function getFuncs() {
     (name) => !name.startsWith("."),
   );
   return {
-    headers: ["Route", "Method"],
+    headers: ["Name", "Method", "Route"],
     rows: files.map((file) => {
       const name = file.substring(0, file.indexOf("."));
       const method = file.substring(
@@ -30,6 +31,7 @@ export async function getFuncs() {
         name: name,
         method: method,
         route: `/${name}.${method}`,
+        restRoute: `${serverBase}/${name}`,
       };
     }),
   };

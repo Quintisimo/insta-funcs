@@ -52,6 +52,7 @@ function Home() {
             >
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.method}</TableCell>
+              <TableCell>{row.restRoute}</TableCell>
             </TableRow>
           ))}
         </TableBody>
