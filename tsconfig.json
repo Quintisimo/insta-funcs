@@ -3,19 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "types": ["vinxi/client"],
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "paths": {
-      "~/components/*": ["./client/components/*"],
-      "~/routes/*": ["./client/routes/*"],
-      "~/store": ["./client/store"],
-      "~/utils/*": ["./utils/*"],
-      "~/server/*": ["./server/*"]
-    }
+    "strict": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+    "jsx": "react-jsx"
   }
 }

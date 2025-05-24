@@ -1,80 +1,41 @@
-import { makeStyles, shorthands, tokens } from "@fluentui/react-components";
 import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { setupTypeAcquisition } from "@typescript/ata";
 import { useAtom, useSetAtom } from "jotai";
 import ts from "typescript";
-import { codeAtom, errorsAtom } from "~/store";
-import { handlerArgsStr } from "~/utils/types";
-
-const useStyles = makeStyles({
-  wrapper: {
-    height: "600px",
-    width: "100%",
-    ...shorthands.margin(tokens.spacingVerticalL, 0),
-  },
-  // Mimic fluent ui input styles
-  editor: {
-    position: "relative",
-    borderRadius: tokens.borderRadiusMedium,
-    overflow: "hidden",
-    ...shorthands.border(
-      tokens.strokeWidthThin,
-      "solid",
-      tokens.colorNeutralStroke1,
-    ),
-    borderBottomColor: tokens.colorNeutralStrokeAccessible,
-    ":focus-within": {
-      borderBottomColor: tokens.colorNeutralStrokeAccessiblePressed,
-    },
-    "::after": {
-      content: '""',
-      position: "absolute",
-      ...shorthands.inset("auto", "-1px", "-1px", "-1px"),
-      height: `max(2px, ${tokens.borderRadiusMedium})`,
-      borderBottomLeftRadius: tokens.borderRadiusMedium,
-      borderBottomRightRadius: tokens.borderRadiusMedium,
-      ...shorthands.borderBottom(
-        "2px",
-        "solid",
-        tokens.colorCompoundBrandStroke,
-      ),
-      clipPath: "inset(calc(100% - 2px) 0px 0px)",
-      transform: "scaleX(0)",
-      transitionProperty: "transform",
-      transitionDuration: tokens.durationUltraFast,
-      transitionDelay: tokens.curveAccelerateMid,
-    },
-    ":focus-within::after": {
-      transform: "scaleX(1)",
-      transitionProperty: "transform",
-      transitionDuration: tokens.durationNormal,
-      transitionDelay: tokens.curveDecelerateMid,
-    },
-  },
-});
+import { codeAtom, errorsAtom } from "./store";
+import { handlerArgsStr } from "./utils/types";
 
 export default function Editor() {
-  const classes = useStyles();
   const [code, setCode] = useAtom(codeAtom);
   const setErrors = useSetAtom(errorsAtom);
 
   return (
-    <div className={classes.wrapper}>
+    <div className="h-[85vh] w-[90%] mx-auto mt-10">
+      <div className="my-2 flex justify-between">
+        <input type="text" placeholder="Function Name" className="input" />
+        <select defaultValue="HTTP Method" className="select">
+          <option disabled={true}>HTTP Method</option>
+          <option>GET</option>
+          <option>POST</option>
+        </select>
+      </div>
       <MonacoEditor
-        className={classes.editor}
+        theme="vs-dark"
         options={{
           minimap: {
             enabled: false,
           },
         }}
         defaultValue={code}
-        onChange={(value) => setCode(value)}
+        onChange={(value) => {
+          if (value) setCode(value);
+        }}
         onValidate={(markers) => {
           setErrors(
             markers
               // Only include error, exclude warnings:https://microsoft.github.io/monaco-editor/docs.html#enums/MarkerSeverity.html
               .filter((marker) => marker.severity === 8)
-              .map((marker) => marker.message),
+              .map((marker) => marker.message)
           );
         }}
         language="typescript"

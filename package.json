@@ -1,37 +1,35 @@
 {
-  "name": "insta-funcs",
-  "private": true,
+  "name": "hono-vite-jsx",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "typecheck": "tsc",
-    "build": "NODE_ENV=build vinxi build",
-    "prestart": "tsx setup.ts",
-    "start": "vinxi start",
+    "dev": "vite",
+    "build": "vite build --mode client && vite build",
     "lint": "biome check .",
     "lint:fix": "biome check --write --unsafe ."
   },
   "dependencies": {
-    "@fluentui/react-components": "9.64.0",
-    "@monaco-editor/react": "4.7.0",
-    "@typescript/ata": "0.9.7",
-    "@vinxi/react": "0.2.5",
-    "@vinxi/server-functions": "1.0.0",
-    "jotai": "2.12.4",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-router-dom": "7.6.0",
-    "tsx": "4.19.4",
-    "typescript": "5.8.3",
-    "vinxi": "0.4.3"
+    "@hono/node-server": "1.14.2",
+    "hono": "4.7.10"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@griffel/tag-processor": "1.0.13",
-    "@griffel/vite-plugin": "0.1.13",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "@vitejs/plugin-react": "4.4.1",
-    "vite-tsconfig-paths": "5.1.4"
+    "@catppuccin/daisyui": "2.1.1",
+    "@catppuccin/tailwindcss": "1.0.0-beta.2",
+    "@hono/vite-build": "1.6.2",
+    "@hono/vite-dev-server": "0.19.1",
+    "@monaco-editor/react": "4.7.0",
+    "@tailwindcss/vite": "4.1.7",
+    "@types/node": "22.15.21",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
+    "@typescript/ata": "0.9.8",
+    "@vitejs/plugin-react": "4.5.0",
+    "daisyui": "5.0.37",
+    "jotai": "2.12.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tailwindcss": "4.1.7",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
   }
 }
