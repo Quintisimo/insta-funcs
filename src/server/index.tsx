@@ -22,6 +22,10 @@ const routes = app.get("/api/clock", (c) => {
 export type AppType = typeof routes;
 
 app.get("/", (c) => {
+  // Needed for web containers to work correctly
+  c.header("Cross-Origin-Embedder-Policy", "require-corp");
+  c.header("Cross-Origin-Opener-Policy", "same-origin");
+
   const html = renderToString(
     <html lang="en">
       <head>
@@ -37,10 +41,7 @@ app.get("/", (c) => {
           rel="stylesheet"
           href={staticPath("styles/style.css", "style.css")}
         />
-        <script
-          type="module"
-          src={staticPath("client/index.tsx", "index.js")}
-        />
+        <script type="module" src={staticPath("index.tsx", "index.js")} />
       </head>
       <body data-theme="macchiato" className="bg-ctp-base">
         <div id="root" />

@@ -10,5 +10,6 @@ export const initialCode = `export async function handler(args: ${typeName}): Pr
 }`;
 
 export const codeAtom = atom(initialCode);
-
 export const errorsAtom = atom<string[]>([]);
+export const nameAtom = atom("");
+export const methodAtom = atom<"GET" | "POST">("GET");

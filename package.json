@@ -24,6 +24,7 @@
     "@types/react-dom": "19.1.5",
     "@typescript/ata": "0.9.8",
     "@vitejs/plugin-react": "4.5.0",
+    "@webcontainer/api": "1.6.1",
     "daisyui": "5.0.37",
     "jotai": "2.12.4",
     "react": "19.1.0",
