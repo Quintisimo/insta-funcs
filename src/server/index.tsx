@@ -7,6 +7,8 @@ import { staticPath } from "./utils";
 
 import { functions } from "./db/schema";
 import { db } from "./db";
+import { eq, and } from "drizzle-orm";
+import { runCode } from "./vm";
 
 const app = new Hono();
 
@@ -18,23 +20,38 @@ app.get(
   })
 );
 
-const routes = app
-  .get("/api/clock", (c) => {
-    return c.json({
-      time: new Date().toLocaleTimeString(),
-    });
-  })
-  .post(
-    "/api/function",
-    vValidator("json", createInsertSchema(functions)),
-    async (c) => {
-      const body = c.req.valid("json");
-      await db.insert(functions).values(body);
-      return c.json({ success: true });
-    }
-  );
+app.on(["GET", "POST"], "/func/:id", async (c) => {
+  const id = c.req.param("id");
+  const code = await db.query.functions.findFirst({
+    columns: {
+      compiledCode: true,
+    },
+    where: and(
+      eq(functions.id, Number(id)),
+      eq(functions.method, c.req.method as "GET" | "POST")
+    ),
+  });
+  if (!code) {
+    return c.text("Function not found", 404);
+  }
 
-export type AppType = typeof routes;
+  const requestBody = c.req.method === "POST" ? c.req.json() : undefined;
+  const result = await runCode(code.compiledCode, c.req.url, requestBody);
+  console.log(result);
+  return c.json(result);
+});
+
+const apiRoutes = app.post(
+  "/api/function",
+  vValidator("json", createInsertSchema(functions)),
+  async (c) => {
+    const body = c.req.valid("json");
+    await db.insert(functions).values(body);
+    return c.json({ success: true });
+  }
+);
+
+export type AppType = typeof apiRoutes;
 
 app.get("/", (c) => {
   // Needed for web containers to work correctly

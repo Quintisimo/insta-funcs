@@ -1,101 +1,28 @@
 import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { setupTypeAcquisition } from "@typescript/ata";
-import { useAtom, useSetAtom } from "jotai";
+import { getDefaultStore, useAtom, useAtomValue, useSetAtom } from "jotai";
 import ts from "typescript";
-import { codeAtom, errorsAtom, methodAtom, nameAtom } from "../store";
+import { codeAtom, errorsAtom, savingAtom } from "../store";
 import { handlerArgsStr } from "../utils/types";
-import { getContainerFiles } from "../webcontainer";
-import { WebContainer } from "@webcontainer/api";
-import { useState } from "react";
-import { client } from "..";
+import FuncDetails from "./func-details";
+import { useEffect, useRef } from "react";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
   const setErrors = useSetAtom(errorsAtom);
-  const [name, setName] = useAtom(nameAtom);
-  const [method, setMethod] = useAtom(methodAtom);
+  const usubRef = useRef<() => void>(null);
 
-  const [saving, setSaving] = useState(false);
-
-  async function saveCode() {
-    try {
-      if (!name) return alert("Please enter a function name.");
-
-      setSaving(true);
-      const webcontainerInstance = await WebContainer.boot();
-      await webcontainerInstance.mount(getContainerFiles(name, code));
-
-      const installProcess = await webcontainerInstance.spawn("npm", [
-        "install",
-      ]);
-      const installExitCode = await installProcess.exit;
-
-      if (installExitCode !== 0)
-        throw new Error("Failed to install dependencies.");
-
-      const buildProcess = await webcontainerInstance.spawn("npm", [
-        "run",
-        "build",
-      ]);
-      const buildExitCode = await buildProcess.exit;
-      console.log("Build exit code:", buildExitCode);
-
-      if (buildExitCode !== 0) throw new Error("Build failed.");
-
-      const compiledCode = await webcontainerInstance.fs.readFile(
-        "/function.js",
-        "utf-8"
-      );
-      console.log("Built file content:", compiledCode);
-
-      await client.api.function.$post({
-        json: {
-          name,
-          originalCode: code,
-          compiledCode,
-          method,
-        },
-      });
-    } catch (error) {
-      console.error("Error during build process:", error);
-    } finally {
-      setSaving(false);
-    }
-  }
+  useEffect(() => {
+    return () => {
+      if (usubRef.current) {
+        usubRef.current();
+      }
+    };
+  });
 
   return (
     <div className="h-[85vh] w-[90%] mx-auto mt-10">
-      <div className="my-2 flex justify-between">
-        <input
-          type="text"
-          placeholder="Function Name"
-          className="input"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button
-          className="btn btn-primary"
-          onClick={saveCode}
-          disabled={saving}
-        >
-          {saving ? (
-            <>
-              <span className="loading loading-spinner"></span> Saveing
-            </>
-          ) : (
-            "Save"
-          )}
-        </button>
-        <select
-          defaultValue="HTTP Method"
-          className="select"
-          value={method}
-          onChange={(e) => setMethod(e.target.value as "GET" | "POST")}
-        >
-          <option value="GET">GET</option>
-          <option value="POST">POST</option>
-        </select>
-      </div>
+      <FuncDetails />
       <MonacoEditor
         theme="vs-dark"
         options={{
@@ -146,6 +73,14 @@ export default function Editor() {
           });
 
           editor.onDidChangeModelContent(() => ata(editor.getValue()));
+
+          const store = getDefaultStore();
+          const unsub = store.sub(savingAtom, () => {
+            editor.updateOptions({
+              readOnly: store.get(savingAtom),
+            });
+          });
+          usubRef.current = unsub;
         }}
       />
     </div>
