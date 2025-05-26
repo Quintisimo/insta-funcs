@@ -46,7 +46,7 @@ export default function Editor() {
         defaultPath="index.ts"
         path="index.ts"
         onMount={(editor, monaco) => {
-          const tsDefault = monaco?.languages.typescript.javascriptDefaults;
+          const tsDefault = monaco?.languages.typescript.typescriptDefaults;
           const name = "ts:filename/argType.d.ts";
           const uri = monaco.Uri.parse(name);
           const model = monaco.editor.getModel(uri);

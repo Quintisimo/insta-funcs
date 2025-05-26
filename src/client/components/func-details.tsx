@@ -40,7 +40,6 @@ export default function FuncDetails() {
         )}
       </button>
       <select
-        defaultValue="HTTP Method"
         className="select"
         value={method}
         onChange={(e) => setMethod(e.target.value as "GET" | "POST")}

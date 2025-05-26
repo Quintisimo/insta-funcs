@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import Editor from "./components/editor";
 
 import type { AppType } from "../server";
+import { StrictMode } from "react";
 
 export const client = hc<AppType>("/");
 
@@ -15,6 +16,8 @@ function App() {
   );
 }
 
-const domNode = document.getElementById("root")!;
-const root = createRoot(domNode);
-root.render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

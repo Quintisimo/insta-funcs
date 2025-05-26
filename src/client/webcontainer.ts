@@ -1,10 +1,13 @@
 import { FileSystemTree, WebContainer } from "@webcontainer/api";
 import { client } from ".";
+import { getNpmPackages } from "./utils/code";
 
 export function getContainerFiles(
   name: string,
   content: string
 ): FileSystemTree {
+  const npmPackages = getNpmPackages(content);
+
   return {
     "package.json": {
       file: {
@@ -19,6 +22,7 @@ export function getContainerFiles(
           },
           "dependencies": ${JSON.stringify({
             esbuild: "latest",
+            ...npmPackages,
           })}
         }`,
       },
@@ -38,8 +42,9 @@ export async function saveCode(
 ) {
   if (!name) return alert("Please enter a function name.");
 
+  const functionFiles = getContainerFiles(name, code);
   const webcontainerInstance = await WebContainer.boot();
-  await webcontainerInstance.mount(getContainerFiles(name, code));
+  await webcontainerInstance.mount(functionFiles);
 
   const installProcess = await webcontainerInstance.spawn("npm", ["install"]);
   const installExitCode = await installProcess.exit;
