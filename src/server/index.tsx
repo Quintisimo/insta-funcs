@@ -1,7 +1,12 @@
 import { Hono } from "hono";
 import { serveStatic } from "@hono/node-server/serve-static";
+import { vValidator } from "@hono/valibot-validator";
+import { createInsertSchema } from "drizzle-valibot";
 import { renderToString } from "react-dom/server";
 import { staticPath } from "./utils";
+
+import { functions } from "./db/schema";
+import { db } from "./db";
 
 const app = new Hono();
 
@@ -13,11 +18,21 @@ app.get(
   })
 );
 
-const routes = app.get("/api/clock", (c) => {
-  return c.json({
-    time: new Date().toLocaleTimeString(),
-  });
-});
+const routes = app
+  .get("/api/clock", (c) => {
+    return c.json({
+      time: new Date().toLocaleTimeString(),
+    });
+  })
+  .post(
+    "/api/function",
+    vValidator("json", createInsertSchema(functions)),
+    async (c) => {
+      const body = c.req.valid("json");
+      await db.insert(functions).values(body);
+      return c.json({ success: true });
+    }
+  );
 
 export type AppType = typeof routes;
 

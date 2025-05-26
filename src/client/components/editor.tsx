@@ -2,11 +2,12 @@ import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { setupTypeAcquisition } from "@typescript/ata";
 import { useAtom, useSetAtom } from "jotai";
 import ts from "typescript";
-import { codeAtom, errorsAtom, methodAtom, nameAtom } from "./store";
-import { handlerArgsStr } from "./utils/types";
-import { getContainerFiles } from "./webcontainer";
+import { codeAtom, errorsAtom, methodAtom, nameAtom } from "../store";
+import { handlerArgsStr } from "../utils/types";
+import { getContainerFiles } from "../webcontainer";
 import { WebContainer } from "@webcontainer/api";
 import { useState } from "react";
+import { client } from "..";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
@@ -14,13 +15,13 @@ export default function Editor() {
   const [name, setName] = useAtom(nameAtom);
   const [method, setMethod] = useAtom(methodAtom);
 
-  const [building, setBuilding] = useState(false);
+  const [saving, setSaving] = useState(false);
 
-  async function buildCode() {
+  async function saveCode() {
     try {
       if (!name) return alert("Please enter a function name.");
 
-      setBuilding(true);
+      setSaving(true);
       const webcontainerInstance = await WebContainer.boot();
       await webcontainerInstance.mount(getContainerFiles(name, code));
 
@@ -41,15 +42,24 @@ export default function Editor() {
 
       if (buildExitCode !== 0) throw new Error("Build failed.");
 
-      const builtFile = await webcontainerInstance.fs.readFile(
+      const compiledCode = await webcontainerInstance.fs.readFile(
         "/function.js",
         "utf-8"
       );
-      console.log("Built file content:", builtFile);
+      console.log("Built file content:", compiledCode);
+
+      await client.api.function.$post({
+        json: {
+          name,
+          originalCode: code,
+          compiledCode,
+          method,
+        },
+      });
     } catch (error) {
       console.error("Error during build process:", error);
     } finally {
-      setBuilding(false);
+      setSaving(false);
     }
   }
 
@@ -65,15 +75,15 @@ export default function Editor() {
         />
         <button
           className="btn btn-primary"
-          onClick={buildCode}
-          disabled={building}
+          onClick={saveCode}
+          disabled={saving}
         >
-          {building ? (
+          {saving ? (
             <>
-              <span className="loading loading-spinner"></span> Building
+              <span className="loading loading-spinner"></span> Saveing
             </>
           ) : (
-            "Build"
+            "Save"
           )}
         </button>
         <select

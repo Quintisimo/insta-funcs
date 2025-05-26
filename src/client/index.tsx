@@ -1,7 +1,7 @@
 import { hc } from "hono/client";
 
 import { createRoot } from "react-dom/client";
-import Editor from "./editor";
+import Editor from "./components/editor";
 
 import type { AppType } from "../server";
 
