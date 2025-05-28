@@ -18,7 +18,7 @@ export function getContainerFiles(
           "version": "1.0.0",
           "type": "module",
           "scripts": {
-            "build": "esbuild function.ts --bundle --outfile=function.js --platform=node --tree-shaking=false"
+            "build": "esbuild function.ts --bundle --outfile=function.js --platform=node"
           },
           "dependencies": ${JSON.stringify({
             esbuild: "latest",
