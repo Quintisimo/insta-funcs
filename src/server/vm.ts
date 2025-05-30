@@ -1,5 +1,5 @@
 import vm from "node:vm";
-import { ImportHandler } from "../client/utils/types";
+import type { ImportHandler } from "../client/utils/types";
 
 export async function runCode(code: string, url: string, body: unknown) {
   const module: Record<"exports", Partial<ImportHandler>> = { exports: {} };
@@ -18,7 +18,7 @@ export async function runCode(code: string, url: string, body: unknown) {
         url,
         body,
       },
-    })
+    }),
   );
 
   return result;

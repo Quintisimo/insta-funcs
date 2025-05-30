@@ -2,6 +2,7 @@
 @import "@catppuccin/tailwindcss/macchiato.css";
 
 @plugin "daisyui" {
+  /* biome-ignore lint/correctness/noUnknownProperty: <explanation> */
   themes: false;
 }
 @plugin "./catppuccinTheme.ts";

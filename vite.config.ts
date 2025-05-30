@@ -1,4 +1,5 @@
 import devServer from "@hono/vite-dev-server";
+import nodeAdapter from "@hono/vite-dev-server/node";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
@@ -10,11 +11,7 @@ export default defineConfig(({ mode }) => {
     return {
       build: {
         rollupOptions: {
-          input: [
-            "./src/client/index.tsx",
-            "./src/client/styles/style.css",
-            "./src/client/public/logo.svg",
-          ],
+          input: ["./src/client/index.tsx", "./src/client/styles/style.css"],
           output: {
             entryFileNames: "static/index.js",
             assetFileNames: "static/[name][extname]",
@@ -32,6 +29,7 @@ export default defineConfig(({ mode }) => {
       }),
       devServer({
         entry: "src/server/index.tsx",
+        adapter: nodeAdapter,
       }),
       tailwindcss(),
     ],

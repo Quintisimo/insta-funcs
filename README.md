@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="./src/client/public/logo.svg">
+  <img src="./src/logo.svg">
 </p>

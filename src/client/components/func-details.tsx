@@ -1,5 +1,5 @@
 import { useAtom, useAtomValue } from "jotai";
-import { nameAtom, methodAtom, savingAtom, codeAtom } from "../store";
+import { codeAtom, methodAtom, nameAtom, savingAtom } from "../store";
 import { saveCode } from "../webcontainer";
 
 export default function FuncDetails() {
@@ -18,6 +18,7 @@ export default function FuncDetails() {
         onChange={(e) => setName(e.target.value)}
       />
       <button
+        type="button"
         className="btn btn-primary"
         onClick={async () => {
           try {
@@ -33,7 +34,7 @@ export default function FuncDetails() {
       >
         {saving ? (
           <>
-            <span className="loading loading-spinner"></span> Saving
+            <span className="loading loading-spinner" /> Saving
           </>
         ) : (
           "Save"

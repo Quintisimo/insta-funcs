@@ -1,10 +1,10 @@
-import { FileSystemTree, WebContainer } from "@webcontainer/api";
+import { type FileSystemTree, WebContainer } from "@webcontainer/api";
 import { client } from ".";
 import { getNpmPackages } from "./utils/code";
 
 export function getContainerFiles(
   name: string,
-  content: string
+  content: string,
 ): FileSystemTree {
   const npmPackages = getNpmPackages(content);
 
@@ -38,7 +38,7 @@ export function getContainerFiles(
 export async function saveCode(
   name: string,
   code: string,
-  method: "GET" | "POST"
+  method: "GET" | "POST",
 ) {
   if (!name) return alert("Please enter a function name.");
 
@@ -62,7 +62,7 @@ export async function saveCode(
 
   const compiledCode = await webcontainerInstance.fs.readFile(
     "/function.js",
-    "utf-8"
+    "utf-8",
   );
   console.log("Built file content:", compiledCode);
 

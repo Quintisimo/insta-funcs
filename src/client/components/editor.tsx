@@ -1,11 +1,11 @@
 import { Editor as MonacoEditor } from "@monaco-editor/react";
 import { setupTypeAcquisition } from "@typescript/ata";
-import { getDefaultStore, useAtom, useAtomValue, useSetAtom } from "jotai";
+import { getDefaultStore, useAtom, useSetAtom } from "jotai";
+import { useEffect, useRef } from "react";
 import ts from "typescript";
 import { codeAtom, errorsAtom, savingAtom } from "../store";
 import { handlerArgsStr } from "../utils/types";
 import FuncDetails from "./func-details";
-import { useEffect, useRef } from "react";
 
 export default function Editor() {
   const [code, setCode] = useAtom(codeAtom);
@@ -39,14 +39,14 @@ export default function Editor() {
             markers
               // Only include error, exclude warnings:https://microsoft.github.io/monaco-editor/docs.html#enums/MarkerSeverity.html
               .filter((marker) => marker.severity === 8)
-              .map((marker) => marker.message)
+              .map((marker) => marker.message),
           );
         }}
         language="typescript"
         defaultPath="index.ts"
         path="index.ts"
         onMount={(editor, monaco) => {
-          const tsDefault = monaco?.languages.typescript.typescriptDefaults;
+          const tsDefault = monaco.languages.typescript.typescriptDefaults;
           const name = "ts:filename/argType.d.ts";
           const uri = monaco.Uri.parse(name);
           const model = monaco.editor.getModel(uri);

@@ -9,6 +9,6 @@ export function getNpmPackages(code: string) {
         ...acc,
         [pkg]: "latest", // Default to latest version for simplicity
       }),
-      {}
+      {},
     );
 }

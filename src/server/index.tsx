@@ -1,23 +1,21 @@
-import { Hono } from "hono";
-import { serveStatic } from "@hono/node-server/serve-static";
 import { vValidator } from "@hono/valibot-validator";
 import { createInsertSchema } from "drizzle-valibot";
+import { Hono } from "hono";
 import { renderToString } from "react-dom/server";
 import { staticPath } from "./utils";
 
-import { functions } from "./db/schema";
+import { and, eq } from "drizzle-orm";
+import logo from "../logo.svg?raw";
 import { db } from "./db";
-import { eq, and } from "drizzle-orm";
+import { functions } from "./db/schema";
 import { runCode } from "./vm";
 
 const app = new Hono();
 
-app.get(
-  "/favicon.svg",
-  serveStatic({
-    root: "./",
-    rewriteRequestPath: () => staticPath("public/logo.svg", "logo.svg"),
-  })
+app.get("/favicon.svg", (c) =>
+  c.body(logo, 200, {
+    "Content-Type": "image/svg+xml",
+  }),
 );
 
 app.on(["GET", "POST"], "/func/:id", async (c) => {
@@ -28,7 +26,7 @@ app.on(["GET", "POST"], "/func/:id", async (c) => {
     },
     where: and(
       eq(functions.id, Number(id)),
-      eq(functions.method, c.req.method as "GET" | "POST")
+      eq(functions.method, c.req.method as "GET" | "POST"),
     ),
   });
   if (!code) {
@@ -48,7 +46,7 @@ const apiRoutes = app.post(
     const body = c.req.valid("json");
     await db.insert(functions).values(body);
     return c.json({ success: true });
-  }
+  },
 );
 
 export type AppType = typeof apiRoutes;
@@ -63,12 +61,7 @@ app.get("/", (c) => {
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link
-          rel="icon"
-          href="/favicon.svg"
-          sizes="any"
-          type="image/svg+xml"
-        ></link>
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
         <link
           rel="stylesheet"
           href={staticPath("styles/style.css", "style.css")}
@@ -78,7 +71,7 @@ app.get("/", (c) => {
       <body data-theme="macchiato" className="bg-ctp-base">
         <div id="root" />
       </body>
-    </html>
+    </html>,
   );
 
   return c.html(`<!DOCTYPE html>${html}`);

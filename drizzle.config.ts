@@ -1,4 +1,4 @@
-import { Config } from "drizzle-kit";
+import type { Config } from "drizzle-kit";
 import { dbUrl } from "./src/server/db";
 
 export default {
