@@ -30,7 +30,7 @@
     "@griffel/tag-processor": "1.0.13",
     "@griffel/vite-plugin": "0.1.13",
     "@types/react": "19.2.2",
-    "@types/react-dom": "18.3.1",
+    "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "5.1.0",
     "vite-tsconfig-paths": "5.1.4"
   }
