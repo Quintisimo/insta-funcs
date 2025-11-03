@@ -26,7 +26,7 @@
     "vinxi": "0.4.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.1",
+    "@biomejs/biome": "2.3.2",
     "@griffel/tag-processor": "1.0.13",
     "@griffel/vite-plugin": "0.1.13",
     "@types/react": "19.2.2",
