@@ -49,11 +49,11 @@ importers:
         specifier: 2.3.4
         version: 2.3.4
       '@griffel/tag-processor':
-        specifier: 1.0.13
-        version: 1.0.13
+        specifier: 1.0.14
+        version: 1.0.14
       '@griffel/vite-plugin':
         specifier: 0.1.14
-        version: 0.1.14(@griffel/tag-processor@1.0.13)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
+        version: 0.1.14(@griffel/tag-processor@1.0.14)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       '@types/react':
         specifier: 19.2.2
         version: 19.2.2
@@ -99,10 +99,6 @@ packages:
 
   '@babel/generator@7.25.6':
     resolution: {integrity: sha512-VPC82gr1seXOpkjAAKoLhP50vx4vGNlF4msF64dSFq1P8RfB+QAuJWGHPXXPc8QyfVWwwB/TNNU4+ayZmHNbZw==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/generator@7.27.1':
-    resolution: {integrity: sha512-UnJfnIpc/+JO0/+KRVQNGU+y5taA5vCbwN8+azkX6beii/ZF+enZJSOKo11ZSzGJjlNfJHfQtmQT8H+9TXPG2w==}
     engines: {node: '>=6.9.0'}
 
   '@babel/generator@7.28.5':
@@ -173,10 +169,6 @@ packages:
     resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-validator-identifier@7.27.1':
-    resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-validator-identifier@7.28.5':
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
@@ -208,11 +200,6 @@ packages:
 
   '@babel/parser@7.26.2':
     resolution: {integrity: sha512-DWMCZH9WA4Maitz2q21SRKHo9QXZxkDsbNZoVD62gusNtNBBqDg9i7uOhASfTfIGNzW+O+r7+jAlM8dwphcJKQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
-  '@babel/parser@7.28.0':
-    resolution: {integrity: sha512-jVZGvOxOuNSsuQuLRTh13nU0AogFlw32w/MT+LV6D3sP5WdbW61E77RnkbaO2dUvmPAYrBDJXGn5gGS6tH4j8g==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -251,8 +238,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.27.1':
-    resolution: {integrity: sha512-1x3D2xEk2fRo3PAhwQwu5UubzgiVWSXTBfWpVd2Mx2AzRqJuDJCsgaDVZ7HB5iGzDW1Hl1sWN2mFyKjmR9uAog==}
+  '@babel/runtime@7.28.4':
+    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.25.0':
@@ -277,10 +264,6 @@ packages:
 
   '@babel/types@7.26.0':
     resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.28.2':
-    resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/types@7.28.5':
@@ -1334,8 +1317,8 @@ packages:
   '@griffel/style-types@1.3.0':
     resolution: {integrity: sha512-bHwD3sUE84Xwv4dH011gOKe1jul77M1S6ZFN9Tnq8pvZ48UMdY//vtES6fv7GRS5wXYT4iqxQPBluAiYAfkpmw==}
 
-  '@griffel/tag-processor@1.0.13':
-    resolution: {integrity: sha512-EWt1RBzMbDWgoBrcER6GwtqL2FPflNvu+lNtZ2j/F9+IZLPLhWUywVWVzwy7ZX25JCSNYWRt9ozpGB3WH9Ph1Q==}
+  '@griffel/tag-processor@1.0.14':
+    resolution: {integrity: sha512-198U3fuii7zecyG2frCBVkdB0NQRcSW37MXIq7s2cl6+Y3l4/dRpxe8P6rVPaqGYRKMZfpeH9WHdOte0DI2ssA==}
 
   '@griffel/vite-plugin@0.1.14':
     resolution: {integrity: sha512-rd1fYp7gJh/lkh2iSXaegmi4nIVdUhVsQacjJ6njULd1mSlbxV09pZDubvKRvW/CEIMAplQIRsX4jYDhmoIqbg==}
@@ -1355,10 +1338,6 @@ packages:
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
-    engines: {node: '>=6.0.0'}
-
-  '@jridgewell/gen-mapping@0.3.8':
-    resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/remapping@2.3.5':
@@ -1768,16 +1747,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
 
-  '@wyw-in-js/processor-utils@0.5.5':
-    resolution: {integrity: sha512-L3IcAfoowhM0fw9Cnv2CNzfjWNLKpYl2CFqam6NvwpiXNR1kXz/GpO0AOiKvCs5h4Ps5kWxE2e8knXLpk8q/2g==}
-    engines: {node: '>=16.0.0'}
-
   '@wyw-in-js/processor-utils@0.8.0':
     resolution: {integrity: sha512-tH4IQRFEzJ3rSL0hEmP1XgAiyWJjYoiWOTf1Gtfp21l+p4S9gHeE0TgYjGoW/VqwZBo+6QSGaUYlI4AYsdeHtA==}
-    engines: {node: '>=16.0.0'}
-
-  '@wyw-in-js/shared@0.5.5':
-    resolution: {integrity: sha512-Wnvp3RGfynHk81lrp/0fA+Yv5yuIr2Ej13N3lawQeqbK4KlMag3P9npyIljGrEiwK2Bv4byHuXsJFgLI0Fo8bw==}
     engines: {node: '>=16.0.0'}
 
   '@wyw-in-js/shared@0.8.0':
@@ -2130,15 +2101,6 @@ packages:
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.4.1:
-    resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -3634,14 +3596,6 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
 
-  '@babel/generator@7.27.1':
-    dependencies:
-      '@babel/parser': 7.28.0
-      '@babel/types': 7.28.2
-      '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
-      jsesc: 3.1.0
-
   '@babel/generator@7.28.5':
     dependencies:
       '@babel/parser': 7.28.5
@@ -3722,8 +3676,6 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.25.9': {}
 
-  '@babel/helper-validator-identifier@7.27.1': {}
-
   '@babel/helper-validator-identifier@7.28.5': {}
 
   '@babel/helper-validator-option@7.24.8': {}
@@ -3752,10 +3704,6 @@ snapshots:
       '@babel/types': 7.28.5
 
   '@babel/parser@7.26.2':
-    dependencies:
-      '@babel/types': 7.28.5
-
-  '@babel/parser@7.28.0':
     dependencies:
       '@babel/types': 7.28.5
 
@@ -3791,7 +3739,7 @@ snapshots:
       '@babel/core': 7.28.5
       '@babel/helper-plugin-utils': 7.27.1
 
-  '@babel/runtime@7.27.1': {}
+  '@babel/runtime@7.28.4': {}
 
   '@babel/template@7.25.0':
     dependencies:
@@ -3839,11 +3787,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
-
-  '@babel/types@7.28.2':
-    dependencies:
-      '@babel/helper-string-parser': 7.27.1
-      '@babel/helper-validator-identifier': 7.27.1
 
   '@babel/types@7.28.5':
     dependencies:
@@ -5300,18 +5243,18 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@griffel/tag-processor@1.0.13':
+  '@griffel/tag-processor@1.0.14':
     dependencies:
       '@griffel/core': 1.19.2
-      '@wyw-in-js/processor-utils': 0.5.5
+      '@wyw-in-js/processor-utils': 0.8.0
       stylis: 4.3.6
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@griffel/vite-plugin@0.1.14(@griffel/tag-processor@1.0.13)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
+  '@griffel/vite-plugin@0.1.14(@griffel/tag-processor@1.0.14)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
     dependencies:
-      '@griffel/tag-processor': 1.0.13
+      '@griffel/tag-processor': 1.0.14
       '@wyw-in-js/vite': 0.8.0(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       vite: 5.4.8(@types/node@22.7.3)(terser@5.34.0)
     transitivePeerDependencies:
@@ -5339,12 +5282,6 @@ snapshots:
       '@jridgewell/set-array': 1.2.1
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.31
-
-  '@jridgewell/gen-mapping@0.3.8':
-    dependencies:
-      '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.5.0
-      '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/remapping@2.3.5':
     dependencies:
@@ -5758,25 +5695,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@wyw-in-js/processor-utils@0.5.5':
-    dependencies:
-      '@babel/generator': 7.27.1
-      '@wyw-in-js/shared': 0.5.5
-    transitivePeerDependencies:
-      - supports-color
-
   '@wyw-in-js/processor-utils@0.8.0':
     dependencies:
       '@babel/generator': 7.28.5
       '@wyw-in-js/shared': 0.8.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@wyw-in-js/shared@0.5.5':
-    dependencies:
-      debug: 4.4.1
-      find-up: 5.0.0
-      minimatch: 9.0.5
     transitivePeerDependencies:
       - supports-color
 
@@ -6130,10 +6052,6 @@ snapshots:
       ms: 2.0.0
 
   debug@4.3.7:
-    dependencies:
-      ms: 2.1.3
-
-  debug@4.4.1:
     dependencies:
       ms: 2.1.3
 
@@ -7186,7 +7104,7 @@ snapshots:
 
   rtl-css-js@1.16.1:
     dependencies:
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.28.4
 
   run-parallel@1.2.0:
     dependencies:
