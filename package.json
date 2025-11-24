@@ -29,7 +29,7 @@
     "@biomejs/biome": "2.3.7",
     "@griffel/tag-processor": "1.0.14",
     "@griffel/vite-plugin": "0.1.14",
-    "@types/react": "19.2.2",
+    "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.1.1",
     "vite-tsconfig-paths": "5.1.4"
