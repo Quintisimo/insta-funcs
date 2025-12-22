@@ -19,7 +19,7 @@
     "@vinxi/server-functions": "1.0.0",
     "jotai": "2.15.2",
     "react": "19.2.3",
-    "react-dom": "19.2.0",
+    "react-dom": "19.2.3",
     "react-router-dom": "7.10.1",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
