@@ -17,7 +17,7 @@
     "@typescript/ata": "0.9.8",
     "@vinxi/react": "0.2.5",
     "@vinxi/server-functions": "1.0.0",
-    "jotai": "2.15.2",
+    "jotai": "2.16.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-router-dom": "7.10.1",
