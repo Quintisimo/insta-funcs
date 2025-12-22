@@ -20,7 +20,7 @@
     "jotai": "2.16.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-router-dom": "7.10.1",
+    "react-router-dom": "7.11.0",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "vinxi": "0.4.3"
