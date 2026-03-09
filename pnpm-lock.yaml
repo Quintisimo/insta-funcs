@@ -49,11 +49,11 @@ importers:
         specifier: 2.4.4
         version: 2.4.4
       '@griffel/tag-processor':
-        specifier: 1.0.14
-        version: 1.0.14
+        specifier: 1.0.16
+        version: 1.0.16
       '@griffel/vite-plugin':
         specifier: 0.1.14
-        version: 0.1.14(@griffel/tag-processor@1.0.14)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
+        version: 0.1.14(@griffel/tag-processor@1.0.16)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       '@types/react':
         specifier: 19.2.14
         version: 19.2.14
@@ -251,8 +251,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.28.4':
-    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
+  '@babel/runtime@7.28.6':
+    resolution: {integrity: sha512-05WQkdpL9COIMz4LjTxGpPNCdlpyimKppYNoJ5Di5EUObifl8t4tuLuUBBZEpoLYOmfvIWrsp9fCl0HoPRVTdA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.25.0':
@@ -1331,19 +1331,19 @@ packages:
   '@fluentui/tokens@1.0.0-alpha.23':
     resolution: {integrity: sha512-uxrzF9Z+J10naP0pGS7zPmzSkspSS+3OJDmYIK3o1nkntQrgBXq3dBob4xSlTDm5aOQ0kw6EvB9wQgtlyy4eKQ==}
 
-  '@griffel/core@1.19.2':
-    resolution: {integrity: sha512-WkB/QQkjy9dE4vrNYGhQvRRUHFkYVOuaznVOMNTDT4pS9aTJ9XPrMTXXlkpcwaf0D3vNKoerj4zAwnU2lBzbOg==}
+  '@griffel/core@1.20.1':
+    resolution: {integrity: sha512-ld1mX04zpmeHn8agx4slSEh8kJ+8or3Y0x9gsJNKSKn6GdCkZBSiGUh+oBXCBn8RKzz8l60TA9IhVSStnyKekA==}
 
   '@griffel/react@1.5.32':
     resolution: {integrity: sha512-jN3SmSwAUcWFUQuQ9jlhqZ5ELtKY21foaUR0q1mJtiAeSErVgjkpKJyMLRYpvaFGWrDql0Uz23nXUogXbsS2wQ==}
     peerDependencies:
       react: '>=16.8.0 <20.0.0'
 
-  '@griffel/style-types@1.3.0':
-    resolution: {integrity: sha512-bHwD3sUE84Xwv4dH011gOKe1jul77M1S6ZFN9Tnq8pvZ48UMdY//vtES6fv7GRS5wXYT4iqxQPBluAiYAfkpmw==}
+  '@griffel/style-types@1.4.0':
+    resolution: {integrity: sha512-vNDfOGV7RN/XkA7vxgf7Z5HgW8eiBm5cHT9wQPhsKB4pxWom5u6eQ9CkYE5mCCTSPl9H6Nd1NBai04d4P6BD7Q==}
 
-  '@griffel/tag-processor@1.0.14':
-    resolution: {integrity: sha512-198U3fuii7zecyG2frCBVkdB0NQRcSW37MXIq7s2cl6+Y3l4/dRpxe8P6rVPaqGYRKMZfpeH9WHdOte0DI2ssA==}
+  '@griffel/tag-processor@1.0.16':
+    resolution: {integrity: sha512-MgmkHWc8257IM7gKNfg488xlv09654MvWbkt4Hic1OPysQ1KFAf7Pb3cAOvvT8nqm39HwpKbE2+W7vQEuZuAbQ==}
 
   '@griffel/vite-plugin@0.1.14':
     resolution: {integrity: sha512-rd1fYp7gJh/lkh2iSXaegmi4nIVdUhVsQacjJ6njULd1mSlbxV09pZDubvKRvW/CEIMAplQIRsX4jYDhmoIqbg==}
@@ -1776,8 +1776,16 @@ packages:
     resolution: {integrity: sha512-tH4IQRFEzJ3rSL0hEmP1XgAiyWJjYoiWOTf1Gtfp21l+p4S9gHeE0TgYjGoW/VqwZBo+6QSGaUYlI4AYsdeHtA==}
     engines: {node: '>=16.0.0'}
 
+  '@wyw-in-js/processor-utils@0.8.1':
+    resolution: {integrity: sha512-aUY8kDXVVLLigS+TbZ3eRlu79Ft1wwgdhUUN0s4DXN9uhPrq1iT3i6WG1BX202flDaBWdV9EXFzeQuUTzinm2g==}
+    engines: {node: '>=16.0.0'}
+
   '@wyw-in-js/shared@0.8.0':
     resolution: {integrity: sha512-WCxLXRwgziXWOSvDVzLGURvyk8//YiX1U/jaFuOB8Dn6p2kJr2k76PEjbKdg4qgf03D2GL+jhbUgayRS9nN0zw==}
+    engines: {node: '>=16.0.0'}
+
+  '@wyw-in-js/shared@0.8.1':
+    resolution: {integrity: sha512-GM9sLkKj7joyppZ+lkmAbrrJqH8QljDTm23bigwpAMihT+jGiGxTU8vJzGjRMj/yPZJumqsuGLXg6dZBUZbm5A==}
     engines: {node: '>=16.0.0'}
 
   '@wyw-in-js/transform@0.8.0':
@@ -1922,11 +1930,14 @@ packages:
     resolution: {integrity: sha512-2hCgjEmP8YLWQ130n2FerGv7rYpfBmnmp9Uy2Le1vge6X3gZIfSmEzP5QTDElFxcvVcXlEn8Aq6MU/PZygIOog==}
     engines: {node: '>=14.16'}
 
-  brace-expansion@1.1.11:
-    resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
+  brace-expansion@1.1.12:
+    resolution: {integrity: sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==}
 
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+
+  brace-expansion@2.0.2:
+    resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -2095,9 +2106,6 @@ packages:
     peerDependenciesMeta:
       uWebSockets.js:
         optional: true
-
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
@@ -2721,15 +2729,19 @@ packages:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
 
-  minimatch@3.1.2:
-    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
+  minimatch@3.1.5:
+    resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
 
-  minimatch@5.1.6:
-    resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
+  minimatch@5.1.9:
+    resolution: {integrity: sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw==}
     engines: {node: '>=10'}
 
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
+    engines: {node: '>=16 || 14 >=14.17'}
+
+  minimatch@9.0.9:
+    resolution: {integrity: sha512-OBwBN9AL4dqmETlpS2zasx+vTeWclWzkblfZk7KTA5j3jeOONz/tRCnZomUyvNg83wL5Zv9Ss6HMJXAgL8R2Yg==}
     engines: {node: '>=16 || 14 >=14.17'}
 
   minipass@3.3.6:
@@ -3774,7 +3786,7 @@ snapshots:
       '@babel/core': 7.29.0
       '@babel/helper-plugin-utils': 7.28.6
 
-  '@babel/runtime@7.28.4': {}
+  '@babel/runtime@7.28.6': {}
 
   '@babel/template@7.25.0':
     dependencies:
@@ -4834,7 +4846,7 @@ snapshots:
       '@fluentui/react-tabster': 9.26.13(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@fluentui/react-theme': 9.2.1
       '@fluentui/react-utilities': 9.26.2(@types/react@19.2.14)(react@19.2.4)
-      '@griffel/core': 1.19.2
+      '@griffel/core': 1.20.1
       '@griffel/react': 1.5.32(react@19.2.4)
       '@swc/helpers': 0.5.19
       '@types/react': 19.2.14
@@ -5281,37 +5293,37 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.19
 
-  '@griffel/core@1.19.2':
+  '@griffel/core@1.20.1':
     dependencies:
       '@emotion/hash': 0.9.2
-      '@griffel/style-types': 1.3.0
-      csstype: 3.1.3
+      '@griffel/style-types': 1.4.0
+      csstype: 3.2.3
       rtl-css-js: 1.16.1
       stylis: 4.3.6
       tslib: 2.8.1
 
   '@griffel/react@1.5.32(react@19.2.4)':
     dependencies:
-      '@griffel/core': 1.19.2
+      '@griffel/core': 1.20.1
       react: 19.2.4
       tslib: 2.8.1
 
-  '@griffel/style-types@1.3.0':
+  '@griffel/style-types@1.4.0':
     dependencies:
       csstype: 3.2.3
 
-  '@griffel/tag-processor@1.0.14':
+  '@griffel/tag-processor@1.0.16':
     dependencies:
-      '@griffel/core': 1.19.2
-      '@wyw-in-js/processor-utils': 0.8.0
+      '@griffel/core': 1.20.1
+      '@wyw-in-js/processor-utils': 0.8.1
       stylis: 4.3.6
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@griffel/vite-plugin@0.1.14(@griffel/tag-processor@1.0.14)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
+  '@griffel/vite-plugin@0.1.14(@griffel/tag-processor@1.0.16)(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))':
     dependencies:
-      '@griffel/tag-processor': 1.0.14
+      '@griffel/tag-processor': 1.0.16
       '@wyw-in-js/vite': 0.8.0(typescript@5.9.3)(vite@5.4.8(@types/node@22.7.3)(terser@5.34.0))
       vite: 5.4.8(@types/node@22.7.3)(terser@5.34.0)
     transitivePeerDependencies:
@@ -5754,8 +5766,15 @@ snapshots:
 
   '@wyw-in-js/processor-utils@0.8.0':
     dependencies:
-      '@babel/generator': 7.28.5
+      '@babel/generator': 7.29.1
       '@wyw-in-js/shared': 0.8.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@wyw-in-js/processor-utils@0.8.1':
+    dependencies:
+      '@babel/generator': 7.29.1
+      '@wyw-in-js/shared': 0.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -5764,6 +5783,14 @@ snapshots:
       debug: 4.4.3
       find-up: 5.0.0
       minimatch: 9.0.5
+    transitivePeerDependencies:
+      - supports-color
+
+  '@wyw-in-js/shared@0.8.1':
+    dependencies:
+      debug: 4.4.3
+      find-up: 5.0.0
+      minimatch: 9.0.9
     transitivePeerDependencies:
       - supports-color
 
@@ -5925,12 +5952,16 @@ snapshots:
       widest-line: 4.0.1
       wrap-ansi: 8.1.0
 
-  brace-expansion@1.1.11:
+  brace-expansion@1.1.12:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
 
   brace-expansion@2.0.1:
+    dependencies:
+      balanced-match: 1.0.2
+
+  brace-expansion@2.0.2:
     dependencies:
       balanced-match: 1.0.2
 
@@ -6094,8 +6125,6 @@ snapshots:
       which: 2.0.2
 
   crossws@0.2.4: {}
-
-  csstype@3.1.3: {}
 
   csstype@3.2.3: {}
 
@@ -6387,7 +6416,7 @@ snapshots:
     dependencies:
       foreground-child: 3.3.0
       jackspeak: 3.4.3
-      minimatch: 9.0.5
+      minimatch: 9.0.9
       minipass: 7.1.2
       package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
@@ -6397,7 +6426,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.1.2
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -6406,7 +6435,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 5.1.6
+      minimatch: 5.1.9
       once: 1.4.0
 
   globals@11.12.0: {}
@@ -6727,17 +6756,21 @@ snapshots:
 
   mimic-fn@4.0.0: {}
 
-  minimatch@3.1.2:
+  minimatch@3.1.5:
     dependencies:
-      brace-expansion: 1.1.11
+      brace-expansion: 1.1.12
 
-  minimatch@5.1.6:
+  minimatch@5.1.9:
     dependencies:
-      brace-expansion: 2.0.1
+      brace-expansion: 2.0.2
 
   minimatch@9.0.5:
     dependencies:
       brace-expansion: 2.0.1
+
+  minimatch@9.0.9:
+    dependencies:
+      brace-expansion: 2.0.2
 
   minipass@3.3.6:
     dependencies:
@@ -7082,7 +7115,7 @@ snapshots:
 
   readdir-glob@1.1.3:
     dependencies:
-      minimatch: 5.1.6
+      minimatch: 5.1.9
 
   readdirp@3.6.0:
     dependencies:
@@ -7157,7 +7190,7 @@ snapshots:
 
   rtl-css-js@1.16.1:
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.28.6
 
   run-parallel@1.2.0:
     dependencies:
